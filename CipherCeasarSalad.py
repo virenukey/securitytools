@@ -1,12 +1,14 @@
 class CipherCeasarSalad:
     def cipher(text, shiftBy):
         result = ""
-        special_characters = '"!@#$%^&*()-+?_=,<>/"[]|\\{}" "'
+        special_characters = '"!@#$%^&*()-+?_=,<>/"[]|\\{}" "./:;~`|\''
         for i in range(len(text)):
             char = text[i]
             if char in special_characters:
                 result += str(ord(char))
             elif char.isnumeric():
+                result += str(ord(char))
+            elif isinstance(char, int):
                 result += str(ord(char))
             elif char.isupper():
                 result += chr((ord(char) + shiftBy-65) % 26 + 65)

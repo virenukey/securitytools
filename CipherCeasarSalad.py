@@ -1,5 +1,3 @@
-import sys
-
 special_characters1 = '"!#$%&*()-+,/"|" "./\''
 special_characters2 = ':;<>=?@'
 special_characters3 = '[]\\^_`'

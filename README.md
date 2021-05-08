@@ -1,8 +1,12 @@
 # securitytools
 
 ## Summary
-Security tools creates in python
-1. Keylogger - (keylogger.py)
-2. Cesar Cipher code to Encrypt/Decrypt text - (CipherCeasarSalad.py)
-3. Hashing Password using SHA256 and storing username and hash password on SQLite DB. The Salt is also stored, but on 
-the different table to maintain the integrity - (HashMyPassword.py, security.db)
+Security tools created using python
+    1. Keylogger - (Script - keylogger.py)
+    2. Cesar Cipher code to Encrypt/Decrypt text - (Script - CipherCeasarSalad.py)
+    3. Hashing Password used SHA256 hash algorithm to hash the password. 
+        a. Storing username and hash password on SQLite DB. 
+        b. The Salt generated is stored on the different table to maintain the integrity and confidentiality - 
+       (Script - HashMyPassword.py, DB - security.db)
+    4. Vulnerability Scanner (Please visit "vulneabilityscanner" folder for more deatils)
+   

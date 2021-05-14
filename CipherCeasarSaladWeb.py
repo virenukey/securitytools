@@ -1,5 +1,5 @@
-import time
 from flask import Flask, render_template, request,jsonify, Response, json, redirect, url_for
+from flask_fontawesome import FontAwesome
 
 special_characters1 = '"!#$%&*()-+,/"|" "./\''
 special_characters2 = ':;<>=?@'
@@ -8,6 +8,7 @@ special_characters4 = '{}|~'
 numeric_characters = '0123456789'
 
 app = Flask(__name__)
+fa = FontAwesome(app)
 
 class CipherCeasarSalad:
 
@@ -15,6 +16,7 @@ class CipherCeasarSalad:
         text1 = text.split("\n")
         final_result = []
         for text in text1:
+            text = text.strip()
             result = ""
             for i in range(len(text)):
                 char = text[i]
@@ -40,6 +42,7 @@ class CipherCeasarSalad:
         text1 = text.split("\n")
         final_result = []
         for text in text1:
+            text = text.strip()
             result = ""
             for i in range(len(text)):
                 char = text[i]
@@ -55,6 +58,7 @@ class CipherCeasarSalad:
                     result += chr((ord(char) - shiftBy - 48) % 10 + 48)
                 elif char.isupper():
                     result += chr((ord(char) - shiftBy - 65) % 26 + 65)
+
                 else:
                     result += chr((ord(char) - shiftBy - 97) % 26 + 97)
             final_result.append(result)
@@ -72,13 +76,13 @@ def encrypt():
     text = request.form['Encrypt']
     shift = int(request.form['shift'])
     multilineCiperText = CipherCeasarSalad.cipher(text, shift)
-    #return multilineCiperText
     return render_template('ceasarInput.html', result=multilineCiperText)
 
 
 @app.route('/decrypt', methods=['POST'])
 def decrypt():
     text = request.form['Decrypt']
+
     shift = int(request.form['shift'])
     deciperTest = CipherCeasarSalad.decipher(text, shift)
     #return deciperTest

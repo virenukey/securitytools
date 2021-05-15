@@ -12,7 +12,12 @@ Security tools created using python
    a. Storing username and hash password on SQLite DB. <br />
    b. The Salt generated is stored on the different table to maintain the integrity and confidentiality - 
    (Script - HashMyPassword.py, DB - security.db) <br />
-4. Vulnerability Scanner (Please visit "vulneabilityscanner" folder for more deatils)
+4. Packet Crafting (Script - PacketCrafting.py)   <br />
+   a. Currently implemented "XMAS" attack
+5. Vulnerability Scanner (Please visit "vulneabilityscanner" folder for more deatils)
    
 Following is UI for Ceasar Cipher
 ![alt text](https://github.com/virenukey/securitytools/blob/main/UI_For_Ceasar_Cipher.PNG?raw=true)
+
+Following is Wireshark screenshot for the ananlyzing XMAS attack using "PacketCrafting.py"
+![alt text](https://github.com/virenukey/securitytools/blob/main/xmas-attack.PNG?raw=true)

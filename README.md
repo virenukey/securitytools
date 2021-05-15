@@ -13,7 +13,8 @@ Security tools created using python
    b. The Salt generated is stored on the different table to maintain the integrity and confidentiality - 
    (Script - HashMyPassword.py, DB - security.db) <br />
 4. Packet Crafting (Script - PacketCrafting.py)   <br />
-   a. Currently implemented "XMAS" attack
+   a. Implemented "XMAS" attack <br />
+   b. Custom crafted TCP three way handshake
 5. Vulnerability Scanner (Please visit "vulneabilityscanner" folder for more deatils)
    
 Following is UI for Ceasar Cipher

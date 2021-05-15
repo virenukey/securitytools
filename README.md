@@ -16,7 +16,11 @@ Security tools created using python
    a. Implemented "XMAS" attack <br />
    b. Custom crafted TCP three way handshake
 5. Vulnerability Scanner (Please visit "vulneabilityscanner" folder for more deatils)
-   
+
+### Pre-requisities
+1. Install Python 3.9 
+2. Run "pip install -r requirements.txt"
+
 Following is UI for Ceasar Cipher
 ![alt text](https://github.com/virenukey/securitytools/blob/main/UI_For_Ceasar_Cipher.PNG?raw=true)
 
